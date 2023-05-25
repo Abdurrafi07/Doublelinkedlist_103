@@ -136,6 +136,20 @@ void DoubleLinkedList::revtraverse() {
 	}
 }
 
+void DoubleLinkedList::hapus() {
+	if (listEmpty()) {
+		cout << "\nList is empty" << endl;
+	}
+	cout << "\nEnter the roll of the student whode record is to be deleted: ";
+	int rollNo;
+	cin >> rollNo;
+	cout << endl;
+	if (DoubleLinkedList::deleteNode(rollNo) == false)
+		cout << "Record not found" << endl;
+	else
+		cout << "Record with roll member" << rollNo << " deleted" << endl;
+}
+
 int main() {
 	DoubleLinkedList obj;
 	while (true) {
@@ -150,7 +164,6 @@ int main() {
 			cout << "\nEnter your choice (1-6): ";
 			char ch;
 			cin >> ch;
-
 		}
 	}
 }
